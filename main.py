@@ -17,6 +17,7 @@ def generate_text_type1(excel_path, out_path, topic, quantity=7):
             copywriting_df.iloc[:, 1]   # url
         )
     ]
+
     
     # 格式化文案数据，对text1应用换行符处理
     formatted_copywriting_list = [
@@ -92,7 +93,7 @@ if __name__ == '__main__':
     quantity = 7      # 每篇文章的段落数量
     
     # 选择要生成的类型（1、2或3）
-    choice = 1
+    choice = 2
     
     # 根据选择调用相应的函数
     if choice == 1:
