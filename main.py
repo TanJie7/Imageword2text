@@ -51,7 +51,7 @@ def generate_text_type2(excel_path, out_path, topic, quantity=7):
         [
             add_newlines(item[0]),  # text1需要格式化
             add_newlines(item[1]),  # text2需要格式化
-            item[2]                 # url保持原样
+            item[2]                 # url 保持原样
         ] 
         for item in copywriting_list
     ]
