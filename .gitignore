@@ -40,7 +40,8 @@ venv.bak/
 Edit_text/*
 !Edit_text/
 !Edit_text/*.xlsx
-main.py
+main.py 
+
 
 # Logs
 *.log

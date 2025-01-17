@@ -4,6 +4,7 @@ from imageword2text_2 import generate_template as template2
 from imageword2text_3 import generate_template as template3
 from utils import add_newlines, create_and_export_text
 
+
 def generate_text_type1(excel_path, out_path, topic, quantity=7):
     """生成只包含标题和图片的文案"""
     copywriting_df = pd.read_excel(excel_path, header=None).astype(str)
