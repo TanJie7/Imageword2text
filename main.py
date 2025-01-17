@@ -45,7 +45,7 @@ def generate_text_type2(excel_path, out_path, topic, quantity=7):
             copywriting_df.iloc[:, 2]   # url
         )
     ]
-
+ 
     # 格式化文案数据
     formatted_copywriting_list = [
         [
