@@ -6,8 +6,8 @@ from utils import add_newlines, create_and_export_text
 
 def generate_text_type1(excel_path, out_path, topic, quantity=7):
     """生成只包含标题和图片的文案"""
-    # 读取 Excel 文件，并将所有列转换为字符串类型
-    copywriting_df = pd.read_excel(excel_path).astype(str)
+    # 读取 Excel 文件，设置header=None表示没有标题行
+    copywriting_df = pd.read_excel(excel_path, header=None).astype(str)
 
     # 读取所有2列数据（text1, url）
     copywriting_list = [
@@ -27,14 +27,15 @@ def generate_text_type1(excel_path, out_path, topic, quantity=7):
         ] 
         for item in copywriting_list
     ]
+    print(formatted_copywriting_list)
     
     create_and_export_text(out_path, topic, formatted_copywriting_list, quantity, template1)
 
 def generate_text_type2(excel_path, out_path, topic, quantity=7):
     """生成包含两段文字和图片的文案"""
-    # 读取 Excel 文件，并将所有列转换为字符串类型
-    copywriting_df = pd.read_excel(excel_path).astype(str)
-
+    # 读取 Excel 文件，设置header=None表示没有标题行，并将所有列转换为字符串类型
+    copywriting_df = pd.read_excel(excel_path, header=None).astype(str)
+   
     # 读取所有3列数据（text1, text2, url）
     copywriting_list = [
         [str(col1), str(col2), str(col3)] 
@@ -44,7 +45,7 @@ def generate_text_type2(excel_path, out_path, topic, quantity=7):
             copywriting_df.iloc[:, 2]   # url
         )
     ]
-    
+
     # 格式化文案数据
     formatted_copywriting_list = [
         [
@@ -59,8 +60,8 @@ def generate_text_type2(excel_path, out_path, topic, quantity=7):
 
 def generate_text_type3(excel_path, out_path, topic, quantity=7):
     """生成包含三段文字和图片的文案"""
-    # 读取 Excel 文件，并将所有列转换为字符串类型
-    copywriting_df = pd.read_excel(excel_path).astype(str)
+    # 读取 Excel 文件，设置header=None表示没有标题行
+    copywriting_df = pd.read_excel(excel_path, header=None).astype(str)
 
     # 读取所有4列数据（text1, text2, text3, url）
     copywriting_list = [
@@ -90,7 +91,7 @@ if __name__ == '__main__':
     # 设置基本参数
     out_path = "Edit_text"
     topic = "文案17"  # 文案主题
-    quantity = 7      # 每篇文章的段落数量
+    quantity = 10      # 每篇文章的段落数量
     
     # 选择要生成的类型（1、2或3）
     choice = 2
