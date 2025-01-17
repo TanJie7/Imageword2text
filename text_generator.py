@@ -17,6 +17,7 @@ def generate_text_type1(excel_path, out_path, topic, quantity=7):
         )
     ]
     
+    
     formatted_copywriting_list = [
         [
             add_newlines(item[0]),  # text1需要格式化
