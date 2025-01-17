@@ -26,7 +26,7 @@ def create_and_export_text(out_path, topic, formatted_copywriting_list, quantity
         os.makedirs(subfolder_path)
 
     # 文章数量
-    text_num = len(formatted_copywriting_list)//quantity
+    text_num = (len(formatted_copywriting_list)+1)//quantity
     for i in range(text_num):
         file_name = f"{topic}-{i + 1}.md"
         file_path = os.path.join(subfolder_path, file_name)
